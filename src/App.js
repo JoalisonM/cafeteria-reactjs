@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Food from './components/Food';
+import foods from './models/foods';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Menu</h1>
+      <button
+        type="button"
+        className="btn btn-secondary rounded-circle mr-4 font-weight-bold"
+        onClick={() => { }}
+      >
+        +
+      </button>
+      <section className="card-deck my-3">
+        {foods.map((food) => (
+          <Food food={food} key={food.id} />
+        ))}
+      </section>
+    </>
   );
 }
 
